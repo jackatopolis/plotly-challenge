@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <select id="selDataset"><option value="940">940</option><option value="941">941</option><option value="943">943</option><option value="944">944</option><option value="945">945</option><option value="946">946</option><option value="947">947</option><option value="948">948</option><option value="949">949</option><option value="950">950</option><option value="952">952</option><option value="953">953</option><option value="954">954</option><option value="955">955</option><option value="956">956</option><option value="958">958</option><option value="959">959</option><option value="960">960</option><option value="961">961</option><option value="962">962</option><option value="963">963</option><option value="964">964</option><option value="966">966</option><option value="967">967</option><option value="968">968</option><option value="969">969</option><option value="970">970</option><option value="971">971</option><option value="972">972</option><option value="973">973</option><option value="974">974</option><option value="975">975</option><option value="978">978</option><option value="1233">1233</option><option value="1234">1234</option><option value="1235">1235</option><option value="1236">1236</option><option value="1237">1237</option><option value="1238">1238</option><option value="1242">1242</option><option value="1243">1243</option><option value="1246">1246</option><option value="1253">1253</option><option value="1254">1254</option><option value="1258">1258</option><option value="1259">1259</option><option value="1260">1260</option><option value="1264">1264</option><option value="1265">1265</option><option value="1273">1273</option><option value="1275">1275</option><option value="1276">1276</option><option value="1277">1277</option><option value="1278">1278</option><option value="1279">1279</option><option value="1280">1280</option><option value="1281">1281</option><option value="1282">1282</option><option value="1283">1283</option><option value="1284">1284</option><option value="1285">1285</option><option value="1286">1286</option><option value="1287">1287</option><option value="1288">1288</option><option value="1289">1289</option><option value="1290">1290</option><option value="1291">1291</option><option value="1292">1292</option><option value="1293">1293</option><option value="1294">1294</option><option value="1295">1295</option><option value="1296">1296</option><option value="1297">1297</option><option value="1298">1298</option><option value="1308">1308</option><option value="1309">1309</option><option value="1310">1310</option><option value="1374">1374</option><option value="1415">1415</option><option value="1439">1439</option><option value="1441">1441</option><option value="1443">1443</option><option value="1486">1486</option><option value="1487">1487</option><option value="1489">1489</option><option value="1490">1490</option><option value="1491">1491</option><option value="1494">1494</option><option value="1495">1495</option><option value="1497">1497</option><option value="1499">1499</option><option value="1500">1500</option><option value="1501">1501</option><option value="1502">1502</option><option value="1503">1503</option><option value="1504">1504</option><option value="1505">1505</option><option value="1506">1506</option><option value="1507">1507</option><option value="1508">1508</option><option value="1510">1510</option><option value="1511">1511</option><option value="1512">1512</option><option value="1513">1513</option><option value="1514">1514</option><option value="1515">1515</option><option value="1516">1516</option><option value="1517">1517</option><option value="1518">1518</option><option value="1519">1519</option><option value="1521">1521</option><option value="1524">1524</option><option value="1526">1526</option><option value="1527">1527</option><option value="1530">1530</option><option value="1531">1531</option><option value="1532">1532</option><option value="1533">1533</option><option value="1534">1534</option><option value="1535">1535</option><option value="1536">1536</option><option value="1537">1537</option><option value="1539">1539</option><option value="1540">1540</option><option value="1541">1541</option><option value="1542">1542</option><option value="1543">1543</option><option value="1544">1544</option><option value="1545">1545</option><option value="1546">1546</option><option value="1547">1547</option><option value="1548">1548</option><option value="1549">1549</option><option value="1550">1550</option><option value="1551">1551</option><option value="1552">1552</option><option value="1553">1553</option><option value="1554">1554</option><option value="1555">1555</option><option value="1556">1556</option><option value="1557">1557</option><option value="1558">1558</option><option value="1561">1561</option><option value="1562">1562</option><option value="1563">1563</option><option value="1564">1564</option><option value="1572">1572</option><option value="1573">1573</option><option value="1574">1574</option><option value="1576">1576</option><option value="1577">1577</option><option value="1581">1581</option><option value="1601">1601</option></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./static/js/app.js"></script>
+  <!-- <script src="./static/js/bonus.js"></script> -->
+
+</body>
+
+</html>
