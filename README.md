@@ -1,4 +1,5 @@
-# plotly-challenge
+# Belly Button Biodiversity Dashboard
+### plotly-challenge
 ### By: Jack Cohen
 
 ## Background
