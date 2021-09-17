@@ -37,12 +37,17 @@ d3.json(url).then(function(data) {
     var title = "Top 10 OTUs";
 
     // Apply a title to the layout
-    var layout = {
-        title: title
+    var layout1 = {
+        title: {
+            text: 'Top 10 OTUs'
+        },
+        xaxis: {
+            title: {text:'Value'}
+        }
     };
 
     // Render the plot to the div tag with id "plot"
-    Plotly.newPlot("bar", data1, layout);
+    Plotly.newPlot("bar", data1, layout1);
 
     let trace2 = {
         x:ex['otu_ids'],
@@ -54,9 +59,17 @@ d3.json(url).then(function(data) {
             color:ex['otu_ids']
         }
     };
-    let layout2 = {
-        title:"OTU Bubble Chart"
-    }
+    var layout2 = {
+        title: {
+            text: 'OTU Bubble Chart'
+        },
+        xaxis: {
+            title: {text:'OTU Number'}
+        },
+        yaxis: {
+            title: {text:'Value'}
+        }
+    };
     var data2 = [trace2];
     Plotly.newPlot("bubble",data2,layout2)
 
@@ -142,8 +155,16 @@ d3.json(url).then(function(data) {
                     }
                 };
                 let layout2 = {
-                    title:"OTU Bubble Chart"
-                }
+                    title: {
+                        text: 'OTU Bubble Chart'
+                    },
+                    xaxis: {
+                        title: {text:'OTU Number'}
+                    },
+                    yaxis: {
+                        title: {text:'Value'}
+                    }
+                };
                 var data2 = [trace2];
                 Plotly.newPlot("bubble",data2,layout2)
 
@@ -175,11 +196,6 @@ d3.json(url).then(function(data) {
                     margin: {t:0, b:0}
                 };
                 Plotly.newPlot("gauge",data3,layout3);
-
-
-
-
-
                 break
             };
         };
