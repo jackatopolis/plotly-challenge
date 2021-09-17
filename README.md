@@ -1,6 +1,6 @@
 # Belly Button Biodiversity Dashboard
-### plotly-challenge
-### By: Jack Cohen
+#### plotly-challenge
+#### By: Jack Cohen
 
 ## Background
 The goal of this project is to build an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.
