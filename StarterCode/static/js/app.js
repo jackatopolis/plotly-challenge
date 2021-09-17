@@ -43,7 +43,53 @@ d3.json(url).then(function(data) {
 
     // Render the plot to the div tag with id "plot"
     Plotly.newPlot("bar", data1, layout);
-  
+
+    let trace2 = {
+        x:ex['otu_ids'],
+        y:ex['sample_values'],
+        mode:'markers',
+        test:ex['otu_labels'],
+        marker: {
+            size:ex['sample_values'],
+            color:ex['otu_ids']
+        }
+    };
+    let layout2 = {
+        title:"OTU Bubble Chart"
+    }
+    var data2 = [trace2];
+    Plotly.newPlot("bubble",data2,layout2)
+
+    // Demographics Info
+    let meta = data['metadata'][0];
+    let demographics = "";
+    for (const [key, value] of Object.entries(meta)) {
+        demographics += key+" : "+value+"<br>";
+    }
+    document.getElementById("sample-metadata").innerHTML = demographics
+
+    // Gauge Plot
+    let data3 = [{
+        domain: {x:[0,1],y:[0,1]},
+        value:data['metadata'][0].wfreq,
+        title: {text:"Weekly Belly Button Wash Frequency"},
+        type:"indicator",
+        mode:"gauge+number",
+        gauge: {
+            axis: {range: [0,9],
+                tickvals:[0,1,2,3,4,5,6,7,8,9]
+            },
+            steps: {range:[0,9]}
+        }
+    }]
+    let layout3 = {
+        width:600,
+        height:450,
+        margin: {t:0, b:0}
+    };
+    Plotly.newPlot("gauge",data3,layout3);
+
+
     var options = '';
     
     for (var j = 0; j < subj.length; j++) {
@@ -83,11 +129,63 @@ d3.json(url).then(function(data) {
                         labels.push(data['samples'][f]['otu_labels'][i]);
                     };
                 };
+
+                // Bubble Chart
+                let trace2 = {
+                    x:data['samples'][f]['otu_ids'],
+                    y:data['samples'][f]['sample_values'],
+                    mode:'markers',
+                    test:data['samples'][f]['otu_labels'],
+                    marker: {
+                        size:ex['sample_values'],
+                        color:ex['otu_ids']
+                    }
+                };
+                let layout2 = {
+                    title:"OTU Bubble Chart"
+                }
+                var data2 = [trace2];
+                Plotly.newPlot("bubble",data2,layout2)
+
+                // Demographics Info
+                let meta = data['metadata'][f];
+                let demographics = "";
+                for (const [key, value] of Object.entries(meta)) {
+                    demographics += key+" : "+value+"<br>";
+                }
+                document.getElementById("sample-metadata").innerHTML = demographics
+
+                    // Gauge Plot
+                let data3 = [{
+                    domain: {x:[0,1],y:[0,1]},
+                    value:data['metadata'][f].wfreq,
+                    title: {text:"Weekly Belly Button Wash Frequency"},
+                    type:"indicator",
+                    mode:"gauge+number",
+                    gauge: {
+                        axis: {range: [0,9],
+                            tickvals:[0,1,2,3,4,5,6,7,8,9]
+                        },
+                        steps: {range:[0,9]}
+                    }
+                }]
+                let layout3 = {
+                    width:600,
+                    height:450,
+                    margin: {t:0, b:0}
+                };
+                Plotly.newPlot("gauge",data3,layout3);
+
+
+
+
+
                 break
             };
         };
         console.log('ids: '+ids)
 
+        // Bar Chart
         var trace1 = {
             y: ids,
             x: vals,
@@ -105,6 +203,10 @@ d3.json(url).then(function(data) {
                 title: {text:'Frequency'}
             }
         };
-        Plotly.Plot("bar", data1, layout1);   
+        Plotly.newPlot("bar", data1, layout1);   
     };
+
+
+
+
 });
