@@ -103,6 +103,14 @@ d3.json(url).then(function(data) {
     Plotly.newPlot("gauge",data3,layout3);
 
 
+    var dropdown = document.getElementById("selDataset");
+    for (var j = 0; j < subj.length; j++) {
+        var opt = document.createElement("option"); 
+        opt.text = subj[j];
+        opt.value = subj[j];
+        dropdown.options.add(opt);
+    }
+
     var options = '';
     
     for (var j = 0; j < subj.length; j++) {
