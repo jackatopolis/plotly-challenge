@@ -106,8 +106,8 @@ d3.json(url).then(function(data) {
     for (var j = 0; j < subj.length; j++) {
         var dropdown = document.getElementById("selDataset");
         var opt = document.createElement("option"); 
-        opt.text = subj[j];
-        opt.value = subj[j];
+        opt.text = subj[j].toString();
+        opt.value = subj[j].toString();
         dropdown.options.add(opt);
     };
 
